@@ -49,7 +49,7 @@ namespace ConsoleApplication
 
 ```
       
-This is a basic `Hello World` example in C# and you can [find more information about everything in the code in this article](https://radu.microsoft.pub.ro/csharp-fundamentals-01/).
+> This is a basic `Hello World` example in C# and you can [find more information about everything in the code in this article](https://radu.microsoft.pub.ro/csharp-fundamentals-01/).
         
     
 - `project.json` - JSON file that contains all necessary dependencies and the frameworks for the application to run, including .NET frameworks and NuGet packages.
@@ -167,7 +167,7 @@ The execution stopped at the line with the breakpoint and we can see the state o
 Adding classes and navigating through code
 -----------------------------------------------------
 
-We are now going to add some classes to our console application and [create an inheritance structure based on a simplified version of this project](https://github.com/microsoft-dx/csharp-fundamentals/tree/master/CSharpFundamentals/csharp06%20-%20Inheritance).
+We are now going to add some classes to our console application and [create simple inheritance structure based on this project](https://github.com/microsoft-dx/csharp-fundamentals/tree/master/CSharpFundamentals/csharp06%20-%20Inheritance).
 > The project also contains documentation with step-by-step explanations and all concepts detailed.
 
 > [This repository contains all necessary materials required to learn C#](https://github.com/microsoft-dx/csharp-fundamentals).
@@ -222,8 +222,8 @@ public class Animal
 ```
 
 > You can go to the definition of code elements by pressing F12.
->
-> [For a complete list of Visual Studio Key Bindings see this page](https://code.visualstudio.com/docs/customization/keybindings).
+
+> [For a complete list of Visual Studio Code Key Bindings see this page](https://code.visualstudio.com/docs/customization/keybindings).
 
 And add the following as the `Main` method:
 
@@ -257,3 +257,11 @@ You can also debug the application by adding breakpoints and using the stack tra
 You can also run the application from the command line using the `dotnet run` command. Depending on the command line used, you will get something very close to the following image:
 
 ![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/command-line-animals.JPG)
+
+
+Conclusion
+-------------
+
+We saw how to install .NET Core and how to build and run a console application using the command line.
+
+Then, we installed Visual Studio Code and saw how easy it is to debug, navigate through and run our code.

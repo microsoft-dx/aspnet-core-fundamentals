@@ -75,3 +75,20 @@ This is a basic `Hello World` example in C# and you can [find more information a
 
 > In a future release, the `project` file will return to a `.csproj` extension in order to maitain compatibility with all Visual Studio and Xamarin projects. 
 
+Calling [`dotnet restore`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore)  will restore all dependencies of the application.
+
+```
+dotnet restore
+```
+
+> [`dotnet restore`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore) calls into NuGet to restore the tree of dependencies. NuGet analyzes the `project.json` file, downloads the dependencies stated in the file (or grabs them from a cache on your machine), and writes the `project.lock.json` file. The `project.lock.json` file is necessary to be able to compile and run.
+
+> The `project.lock.json` file is a persisted and complete set of the graph of NuGet dependencies and other information describing an app. This file is read by other tools, such as dotnet build and dotnet run, enabling them to process the source code with a correct set of NuGet dependencies and binding resolutions.
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/dotnet-restore.JPG)
+
+At this point, we can run the application and see if the output is the expected one using the [`dotnet run`](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-run) command.
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/dotnet-run.JPG)
+
+This is how you create, build and run a basic .NET Core application using the command line.

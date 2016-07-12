@@ -3,6 +3,8 @@ Getting started with .NET Core
 
 [In the previous article](https://radu.microsoft.pub.ro/dot-net-core-introduction/), we saw what is .NET Core and what can we build with it. In this article, we will install .NET Core and start with some basic examples using the command line and Visual Studio Code.
 
+> This tutorial can be done using Windows, Linux or macOS..
+
 Installing .NET Core
 ------------------------
 
@@ -92,3 +94,166 @@ At this point, we can run the application and see if the output is the expected 
 ![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/dotnet-run.JPG)
 
 This is how you create, build and run a basic .NET Core application using the command line.
+
+
+Installing Visual Studio Code
+-----------------------------------
+
+We saw how to create, build and run applications from the command line, now it is time to move to a complete code editor that has IntelliSense and debugging built in - [Visual Studio Code](https://code.visualstudio.com/).
+
+> [Install Visual Studio code from here](https://code.visualstudio.com/) 
+
+In order to get IntelliSense working, you need to install the C# extension for Visual Studio Code that also installs [OmniSharp](omnisharp.net/) for IntelliSense.
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-extensions.JPG)
+
+After it installs, enable it and restart VS Code. At this point, we can open the folder with the earlier project in VS Code.
+
+> You can do this in the command line by using `code .`
+
+
+Running in Visual Studio Code
+-------------------------------------
+
+In order to enable debugging and running the code from VS Code, a prompt is shown asking to add the configuration files.
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-assets.JPG)
+
+
+> This will add a `.vscode` folder in the solution root with two `.json` files - `tasks.json` and `launch.json`
+
+
+We can run the application by going to the Debug pane (or by pressing Ctrl(Cmd)+Shift+D) and press the run button (or F5).
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-run.jpg)
+
+If everything goes well, you should be able to see the output in the debug console.
+
+Debugging in Visual Studio Code
+---------------------------------------
+
+We saw how to run the application, not let's add a method that adds two integers.
+
+```
+using System;
+
+namespace ConsoleApplication
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int a = 7, b = 12;
+
+            Console.WriteLine(Add(a, b));
+        }
+
+        public static int Add(int a, int b)
+        {
+            int sum = a + b;
+            return sum;
+        }
+    }
+}
+```
+
+If we add a breakpoint at the `return sum` line and we run the application, we get the following output:
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-breakpoint.jpg)
+
+The execution stopped at the line with the breakpoint and we can see the state of our program at this point.
+
+
+Adding classes and navigating through code
+-----------------------------------------------------
+
+We are now going to add some classes to our console application and [create an inheritance structure based on a simplified version of this project](https://github.com/microsoft-dx/csharp-fundamentals/tree/master/CSharpFundamentals/csharp06%20-%20Inheritance).
+> The project also contains documentation with step-by-step explanations and all concepts detailed.
+
+> [This repository contains all necessary materials required to learn C#](https://github.com/microsoft-dx/csharp-fundamentals).
+
+
+Let's add the following files: `Animal.cs`, `Dog.cs` with the following code:
+
+```
+using System;
+
+public class Animal
+    {
+        public string Color { get; set; }
+
+        public void Eat(string food)
+        {
+            Console.WriteLine("{0} animal eating {1}", Color, food);
+        }
+
+        public Animal()
+        {
+        }
+
+        public Animal(string color)
+        {
+            Color = color;
+        }
+    }
+```
+
+```
+using System;
+
+public class Animal
+    {
+        public string Color { get; set; }
+
+        public void Eat(string food)
+        {
+            Console.WriteLine("{0} animal eating {1}", Color, food);
+        }
+
+        public Animal()
+        {
+        }
+
+        public Animal(string color)
+        {
+            Color = color;
+        }
+    }
+```
+
+> You can go to the definition of code elements by pressing F12.
+>
+> [For a complete list of Visual Studio Key Bindings see this page](https://code.visualstudio.com/docs/customization/keybindings).
+
+And add the following as the `Main` method:
+
+```
+        public static void Main(string[] args)
+        {
+            Animal animal = new Animal("green");
+            animal.Eat("food");
+
+            Dog dog = new Dog("blue", "bichon"); 
+            dog.Eat("bones"); 
+            dog.Bark(); 
+
+            var animals = new Animal[]
+            {
+                animal,
+                dog        
+            };
+
+            foreach(var a in animals)
+                a.Eat("food for animals");
+        }
+```
+
+After running the application, you get the expected output. 
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-animals-run.JPG)
+
+You can also debug the application by adding breakpoints and using the stack trace and variable watch.
+
+You can also run the application from the command line using the `dotnet run` command. Depending on the command line used, you will get something very close to the following image:
+
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/command-line-animals.JPG)

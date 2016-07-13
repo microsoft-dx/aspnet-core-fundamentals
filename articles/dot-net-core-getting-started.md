@@ -163,101 +163,46 @@ If we add a breakpoint at the `return sum` line and we run the application, we g
 
 The execution stopped at the line with the breakpoint and we can see the state of our program at this point.
 
-
 Adding classes and navigating through code
------------------------------------------------------
+------------------------------------------------------
 
-We are now going to add some classes to our console application and [create simple inheritance structure based on this project](https://github.com/microsoft-dx/csharp-fundamentals/tree/master/CSharpFundamentals/csharp06%20-%20Inheritance).
-> The project also contains documentation with step-by-step explanations and all concepts detailed.
+At this point, we can start using VS Code to its full potential - IntelliSense, code completion, navigating code and going to definitions.
 
-> [This repository contains all necessary materials required to learn C#](https://github.com/microsoft-dx/csharp-fundamentals).
+> You can see a [full list of VS Code tips and tricks on the official Microsoft GitHub organization here](https://github.com/Microsoft/vscode-tips-and-tricks).
 
-
-Let's add the following files: `Animal.cs`, `Dog.cs` with the following code:
+We will add a very basic `Person` class based on [this project](https://github.com/microsoft-dx/csharp-fundamentals/tree/master/CSharpFundamentals/csharp05%20-%20Classes).
 
 ```
-using System;
-
-public class Animal
+public class Person
     {
-        public string Color { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
 
-        public void Eat(string food)
-        {
-            Console.WriteLine("{0} animal eating {1}", Color, food);
-        }
-
-        public Animal()
+        public Person()
         {
         }
 
-        public Animal(string color)
+        public Person(string firstName, string lastName, int age)
         {
-            Color = color;
-        }
-    }
-```
-
-```
-using System;
-
-public class Animal
-    {
-        public string Color { get; set; }
-
-        public void Eat(string food)
-        {
-            Console.WriteLine("{0} animal eating {1}", Color, food);
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
         }
 
-        public Animal()
+        public void PrintPerson()
         {
-        }
-
-        public Animal(string color)
-        {
-            Color = color;
-        }
-    }
-```
-
-> You can go to the definition of code elements by pressing F12.
-
-> [For a complete list of Visual Studio Code Key Bindings see this page](https://code.visualstudio.com/docs/customization/keybindings).
-
-And add the following as the `Main` method:
-
-```
-        public static void Main(string[] args)
-        {
-            Animal animal = new Animal("green");
-            animal.Eat("food");
-
-            Dog dog = new Dog("blue", "bichon"); 
-            dog.Eat("bones"); 
-            dog.Bark(); 
-
-            var animals = new Animal[]
-            {
-                animal,
-                dog        
-            };
-
-            foreach(var a in animals)
-                a.Eat("food for animals");
+            Console.WriteLine("First Name: {0}, Last Name: {1}, Age: {2}", FirstName, LastName, Age);
         }
 ```
 
-After running the application, you get the expected output. 
+It is a very basic class with three properties, two constructors and a method that prints the information to the console.
 
-![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-animals-run.JPG)
+> You can [find all necessary materials to learn C# in this repository](https://github.com/microsoft-dx/csharp-fundamentals).
 
-You can also debug the application by adding breakpoints and using the stack trace and variable watch.
+In the `Main` method, we instantiate a new `Person` object and use the `PrintPerson` method to display the properties.
 
-You can also run the application from the command line using the `dotnet run` command. Depending on the command line used, you will get something very close to the following image:
-
-![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/command-line-animals.JPG)
-
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/dot-net-getting-started/vs-code-person-debugging.JPG)
 
 Conclusion
 -------------

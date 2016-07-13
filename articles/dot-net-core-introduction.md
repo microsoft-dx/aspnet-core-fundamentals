@@ -1,3 +1,11 @@
+**Table of Contents**
+
+- [What is .NET Core?](#what-is-net-core)
+- [Scenarios for .NET Core](##scenarios-for-net-core)
+- [.NET Standard - One library to rule them all](#net-standard---one-library-to-rule-them-all)
+- [Tools](#tools)
+- [Conclusion](#conclusion)
+
 What is .NET Core?
 -----------------------
 

@@ -1,3 +1,10 @@
+**Table of Contents**
+
+- [Introduction](#introduction)
+- [Getting Started with ASP .NET Core 1.0](#getting-started-with-asp-net-core-10)
+- [Make the project a web application](#make-the-project-a-web-application)
+- [Conclusion](#conclusion)
+
 Introduction
 ---------------
 

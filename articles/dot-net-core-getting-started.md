@@ -1,3 +1,14 @@
+**Table of Contents**
+
+- [Getting started with .NET Core](#getting-started-with-net-core)
+	- [Installing .NET Core](#installing-net-core)
+	- [Building a .NET Core application using the command line interface](#building-a-net-core-application-using-the-command-line-interface)
+	- [Installing Visual Studio Code](#installing-visual-studio-code)
+	- [Running in Visual Studio Code](#running-in-visual-studio-code)
+	- [Debugging in Visual Studio Code](#debugging-in-visual-studio-code)
+	- [Adding classes and navigating through code](#adding-classes-and-navigating-through-code)
+	- [Conclusion](#conclusion)
+
 Getting started with .NET Core
 =========================
 

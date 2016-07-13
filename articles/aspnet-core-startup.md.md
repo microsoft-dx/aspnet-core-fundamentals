@@ -51,7 +51,6 @@ First of all, if this is a new application (created using `dotnet new`), you sho
       },
       "imports": "dnxcore50"
     }
-  
 ```
 Then, add a new file called `Startup.cs` and add the following code:
 
@@ -99,4 +98,4 @@ namespace ConsoleApplication
 Now if we run the application (from the command line or from VS Code) and navigate to http://localhost:5000, we see the expected output.
 
 
-From now on, we will use the `Startup` class 
+From now on, we will use the `Startup` class when building web applications with ASP .NET Core and we will add middleware and services in it.

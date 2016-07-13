@@ -13,7 +13,7 @@ ASP .NET Core is no longer based on`System.Web`. Instead, everything in the fram
 
 It comes with integrated [dependency injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html), a new request pipeline middleware and the ability to plug in your own web server (IIS - Windows only or Kestrel inside your own process in Windows, macOS and Linux) and run across operating systems with very similar development processes and tools.
 
-Together with [TypeScript](https://www.typescriptlang.org/), the client-side framework of your choice (Angular 2, React, Aurelia etc), familiar tools for web developers (that didn't have very good support on Windows until very recently) like Grunt, Gulp or Bower and with a superior performance compared to Node, for example, Microsoft bets on ASP .NET Core to become one of the preferred frameworks wen building modern web and cloud applications.
+Together with [TypeScript](https://www.typescriptlang.org/), the client-side framework of your choice (Angular 2, React, Aurelia etc), familiar tools for web developers (that didn't have very good support on Windows until very recently) like Grunt, Gulp or Bower and with a superior performance compared to Node, for example, Microsoft bets on ASP .NET Core to become one of the preferred frameworks when building modern web and cloud applications.
 
 > For the complete section on client-side development with ASP .NET Core see [the Official ASP .NET Core Documentation](https://docs.asp.net/en/latest/client-side/index.html).
 
@@ -24,7 +24,7 @@ Getting Started with ASP .NET Core 1.0
 
 The first step in beginning development is to install .NET Core. You should [follow this tutorial on how to get started with .NET Core and build a basic console application](https://github.com/radu-matei/blog-content/blob/master/articles/dot-net-core-getting-started.md).
 
-After installing .NET Core, open a command-line prompt and create a new directory and a `dotnet` application.
+After installing .NET Core, open a command-line prompt, create a new directory and add a `dotnet` application.
 
 ```
 mkdir aspnet-core-tutorial
@@ -135,3 +135,13 @@ You can either run the application from the command line (`dotnet run`) or from 
 To run it from VS Code, go to the debugging pane (or press Ctrl/Cmd + Shift + D) and start the application.
 
 After the application starts, open a browser and navigate to http://localhost:5000.
+If everything worked as expected, you should see the following:
+![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/aspnet-core-getting-started/aspnet-core-hello-universe-browser.JPG)
+
+
+Conclusion
+-------------
+
+We built a very basic web application starting from the console application template by adding the Kestrel dependency and by using `WebHostBuilder` to create the application host.
+
+We then, for each request we built the response containing a simple message and the current time of the server.

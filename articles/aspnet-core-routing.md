@@ -122,6 +122,45 @@ In order to test this route, we need to use a tool that sends `HTTP` requests to
 
 > If we try and change the method type in PostMan from `POST` to `GET`, we notice how the request fails.
 
+The full `Startup` class
+-------------------------------
+```
+using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
+
+public class Startup
+{
+    public void Configure(IApplicationBuilder app)
+    {
+        
+        var routeBuilder = new RouteBuilder(app);
+        
+        routeBuilder.MapGet("", context => context.Response.WriteAsync("Hello from root!"));
+        routeBuilder.MapGet("hello", context => context.Response.WriteAsync("Hello from /hello"));
+        routeBuilder.MapGet("hello/{name}", context => context.Response.WriteAsync($"Hello, {context.GetRouteValue("name")}"));
+
+        routeBuilder.MapGet("square/{number:int}", context =>
+        {
+            int number = Convert.ToInt32(context.GetRouteValue("number"));
+            return context.Response.WriteAsync($"The square of {number} is {number * number}");
+        });
+
+        routeBuilder.MapPost("post", context => context.Response.WriteAsync("Posting!"));
+
+        app.UseRouter(routeBuilder.Build());
+
+    }
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddRouting();
+    }
+}
+```
+
 
 Conclusion
 --------------

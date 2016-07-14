@@ -91,7 +91,8 @@ routeBuilder.MapGet("hello", context => context.Response.WriteAsync("Hello from 
 We can create paths that contain multiple elements and we can extract the parameters entered when making the request. For example, when requesting on `hello/{name}`, we can extract the parameter `{name}` and use it when constructing the response:
 
 ```
-routeBuilder.MapGet("hello/{name}", context => context.Response.WriteAsync($"Hello, {context.GetRouteValue("name")}"));
+routeBuilder.MapGet("hello/{name}", context => context.Response
+                                                      .WriteAsync($"Hello, {context.GetRouteValue("name")}"));
 ```
 
 We can also add constrains on the parameters. For example, let's create a respond for requests coming to the path `/square/{number}`, where `{number}` is an `int` and responds with the square of the number.
@@ -150,7 +151,8 @@ public class Startup
         
         routeBuilder.MapGet("", context => context.Response.WriteAsync("Hello from root!"));
         routeBuilder.MapGet("hello", context => context.Response.WriteAsync("Hello from /hello"));
-        routeBuilder.MapGet("hello/{name}", context => context.Response.WriteAsync($"Hello, {context.GetRouteValue("name")}"));
+        routeBuilder.MapGet("hello/{name}", context => context.Response
+                                                              .WriteAsync($"Hello, {context.GetRouteValue("name")}"));
 
         routeBuilder.MapGet("square/{number:int}", context =>
         {

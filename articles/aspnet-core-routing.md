@@ -1,3 +1,13 @@
+**Table of Contents** 
+
+- [Routing](#)
+	- [Introduction](#introduction)
+	- [Installing the Routing package](#installing-the-routing-package)
+	- [Adding the Routing Service in Startup](#adding-the-routing-service-in-startup)
+	- [Adding and handling custom routes](#adding-and-handling-custom-routes)
+	- [The full Startup class](#the-full-startup-class)
+	- [Conclusion](#conclusion)
+
 Routing
 =======
 

@@ -128,7 +128,7 @@ routeBuilder.MapPost("post", context => context.Response.WriteAsync("Posting!"))
 
 In order to test this route, we need to use a tool that sends `HTTP` requests to our application. We will use [PostMan for Google Chrome](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
 
-![](https://raw.githubusercontent.com/radu-matei/blog-content/master/media/aspnet-core-routing/routing-postman.JPG)
+![](/media/aspnet-core-routing/routing-postman.JPG)
 
 
 > If we try and change the method type in PostMan from `POST` to `GET`, we notice how the request fails.
